@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cherry+Bomb+One&family=Dela+Gothic+One&family=Monoton&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Oxygen+Mono&family=Russo+One&family=Yeseva+One&display=swap" rel="stylesheet">
+        <title>Help Page</title>
+    </head>
+    <body>
+        <body>
+            <header>
+                <a href="#" class="name">HELP</a>
+        
+                <ul class="other">
+                    <li><a href="index.html">Go Back</a></li>
+                </ul>
+            </header>
+    
+            <div class="header">
+                <!-- <div class="other">
+                    <a title href="help.html">Help</a>
+                    <a title href="https://www.desmos.com/scientific" target="_blank">Calculator</a>
+                </div> -->
+                <h1>HELP PAGE</h1>
+                <p>You get a problem in this web?</p>
+            </div>
+    
+            <div class="gradient"></div>
+
+            <div class="help">
+                <div class="head">
+                    <h1>Choose Question</h1>
+                </div>
+
+                <div class="gradientMin"></div>
+
+                <section class="ask">
+                    <div class="container">
+                        <button id="minus" onclick="stepper(this)">-</button>
+                        <input type="number" name="number" class="chosenum" id="chosenum" min="0" step="5" value="0" oninput="this.value = 
+                        !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+                        <button id="plus" onclick="stepper(this)">+</button>
+                    </div>
+
+                    <p>↑ Here is for you to set the numbers of questions ↑</p>
+
+                    <div class="radio-inputs" id="radio-inputs">
+                        <label class="radio">
+                            <input type="radio" name="radio" value="+" checked="">
+                            <span class="or" id="+">+</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="radio" value="-">
+                            <span class="or" id="-">-</span>
+                        </label>
+                    </div>
+                    <p>↑ Here is for you to set questions are plus or minus ↑</p>
+                    <a><button class="button"><span class="send">Send</span></button></a>
+                    <p>↑ Send and do it ↑</p>
+                </section>
+
+                <div class="head">
+                    <h1>Question</h1>
+                </div>
+
+                <div class="gradientMin"></div>
+
+                <div class="q">
+                    <span class="exque">
+                        <span class="exnumbox">
+                            <span class="num">01: 01+01</span>
+                            <span class="inside">
+                                <span class="txt"></span>
+                                <span class="realAns"></span>
+                                <input class="txtbox" type="number" pattern="[0-9]" placeholder="=">
+                            </span>
+                        </span>
+                    </span>
+                    <span class="text">
+                        <h2>Question Example</h2>
+                        <p>You can write down your answer here</p>
+                    </span>
+                </div>
+                
+                <div class="q">
+                    <span class="exque">
+                        <span class="exnumbox" id="wrong">
+                            <span class="num">02: 01+01</span>
+                            <span class="inside">
+                                <span class="wrong">Wrong Type</span>
+                                <span class="realAns"></span>
+                                <input class="txtbox" type="number" pattern="[0-9]" placeholder="=">
+                            </span>
+                        </span>
+                    </span>
+                    <span class="text">
+                        <h2>Wrong Type</h2>
+                        <p>Your answer is not a number</p>
+                    </span>
+                </div>
+
+                <div class="q">
+                    <span class="exque">
+                        <span class="exnumbox" id="ok">
+                            <span class="num">03: 01+01</span>
+                            <span class="inside">
+                                <span class="txt">Correct, ans is</span>
+                                <span class="realAns">-></span>
+                                <input class="txtbox" type="number" pattern="[0-9]" placeholder="=" value="2" disabled>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="text">
+                        <h2>Correct Answer</h2>
+                        <p>Your answer is correct</p>
+                    </span>
+                </div>
+
+                <div class="q">
+                    <span class="exque">
+                        <span class="exnumbox" id="not">
+                            <span class="num">04: 01+01</span>
+                            <span class="inside">
+                                <span class="txt">Incorrect, ans is</span>
+                                <span class="realAns" id="incorr">2</span>
+                                <input class="txtbox" type="number" pattern="[0-9]" placeholder="=" value="3" disabled>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="text">
+                        <h2>Incorrect Answer</h2>
+                        <p>Your answer is incorrect</p>
+                    </span>
+                </div>
+
+                <div class="head">
+                    <h1>Data</h1>
+                </div>
+
+                <div class="gradientMin"></div>
+
+                <div class="datalol">
+                    <div class="score" id="pass">
+                        <p>Score:<span id="userScore">100</span>/100</p>
+                    </div>
+                    <div class="text">
+                        <h2>Your score</h2>
+                        <p>(Correct ans / Total no. of questions) * 100</p>
+                    </div>
+                </div>
+
+                <div class="datalol">
+                    <div class="otherdata">
+                        <h2>No. of question: <span >50</span></h2>
+                        <h2>Correct: <span >100</span></h2>
+                        <h2>Use Time: <span >01:26</span></h2>
+                    </div>
+                    <div class="text">
+                        <h2>Your data</h2>
+                        <p>No. of question & Correct & Time</p>
+                    </div>
+                </div>
+
+                <div class="datalol">
+                    <div class="exgrade" id="userGrade">
+                        <h3>Grade:<span class="gradee">A+</span></h3>
+                        <div class="text">
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h2>Your grade</h2>
+                        <p>your score - your time (all to seconds) / Total no. of questions</p>
+                    </div>
+                </div>
+                
+
+            </div>
+    </body>
+    <script src="js/sum.js"></script>
+</html>
